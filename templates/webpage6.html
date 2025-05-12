@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meal Plan | HealthSync</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .confirm-btn {
+            background-color: white;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .confirm-btn:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Days of the Week Tabs -->
+    <div class="days-tabs">
+        {% for day in meal_plans.keys() %}
+            <a href="#{{ day|lower }}" class="day-tab {% if loop.first %}active{% endif %}">{{ day }}</a>
+        {% endfor %}
+        <button type="submit" class="confirm-btn" form="meal-plan-form">Confirm</button>
+    </div>
+
+    <!-- Meal Plan Section -->
+    <div class="meal-plan-container">
+        <form id="meal-plan-form" method="POST" action="{{ url_for('meal_plan', category=category) }}">
+            {% for day, dishes in meal_plans.items() %}
+                <div id="{{ day|lower }}" class="day-section {% if not loop.first %}hidden{% endif %}">
+                    <h2>{{ day }} Meal Options</h2>
+                    <div class="dish-options">
+                        <div class="dish-selector">
+                            {% for dish in dishes %}
+                                <label class="dish-option">
+                                    <input type="radio" name="{{ day|lower }}-dish" value="{{ loop.index0 }}" {% if loop.first %}checked{% endif %}>
+                                    {{ dish.name }}
+                                </label>
+                            {% endfor %}
+                        </div>
+                        {% for dish in dishes %}
+                            <div class="dish-card {% if not loop.first %}hidden{% endif %}" data-dish="{{ day|lower }}-{{ loop.index0 }}">
+                                <!-- Left: Dish Image -->
+                                <div class="dish-image">
+                                    <img src="{{ url_for('static', filename='images/' + dish.image) }}" alt="{{ dish.alt }}">
+                                </div>
+                                <!-- Right: Recipe and Macros -->
+                                <div class="dish-details">
+                                    <h3>{{ dish.name }}</h3>
+                                    <div class="details-content">
+                                        <h4>Recipe</h4>
+                                        <pre>{{ dish.recipe }}</pre>
+                                        <h4>Macros</h4>
+                                        <p>Calories: {{ dish.macros.calories }} kcal</p>
+                                        <p>Protein: {{ dish.macros.protein }}g</p>
+                                        <p>Carbs: {{ dish.macros.carbs }}g</p>
+                                        <p>Fat: {{ dish.macros.fat }}g</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </form>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.day-tab');
+        const sections = document.querySelectorAll('.day-section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                sections.forEach(s => s.classList.add('hidden'));
+
+                tab.classList.add('active');
+                const targetSection = document.querySelector(tab.getAttribute('href'));
+                targetSection.classList.remove('hidden');
+            });
+        });
+
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', () => {
+                const day = radio.name.split('-')[0];
+                const selectedIndex = radio.value;
+                const dishCards = document.querySelectorAll(`.dish-card[data-dish^="${day}-"]`);
+
+                dishCards.forEach((card, index) => {
+                    if (index == selectedIndex) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

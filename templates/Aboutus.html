@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | HealthSync</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            <a href="#">HealthSync</a>
+        </div>
+        <div class="navbar-right">
+            <a href="{{ url_for('homepage') }}">Home</a>
+            <a href="{{ url_for('how_it_works') }}">How it works</a>
+        </div>
+    </div>
+
+    <!-- Scrollable Content -->
+    <div class="scrollable-background">
+        <div class="content-section">
+            <h2>About Us</h2>
+            <p>Welcome to HealthSync, a platform dedicated to empowering individuals to achieve their health and wellness goals through innovative AI technology. Founded in 2025, our mission is to provide personalized nutrition and fitness solutions tailored to your unique needs.</p>
+            <p>Our team collaborate to deliver cutting-edge tools like our AI-powered BMI calculator and custom meal plans. We are passionate about promoting a healthier lifestyle and supporting you every step of the way.</p>
+            <p><strong>Our Vision:</strong> To revolutionize health management with accessible, data-driven insights for everyone.</p>
+            <p><strong>Contact Us:</strong> For inquiries, reach out at support@healthsync.com.</p>
+        </div>
+    </div>
+</body>
+</html>

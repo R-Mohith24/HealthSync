@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HealthSync</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            <a href="#">HealthSync</a>
+        </div>
+        <div class="navbar-right">
+            <a href="{{ url_for('login') }}">LOGIN</a>
+            <a href="{{ url_for('aboutus') }}">ABOUT US</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">CONTACT</a>
+                <div class="dropdown-content">
+                    <a href="mailto:support@healthsyncfake.com">support@healthsyncfake.com</a>
+                    <a href="tel:+918179529966">+918179529966</a>
+                </div>
+            </div>
+            <a href="{{ url_for('how_it_works') }}">HOW IT WORKS</a>
+        </div>
+    </div>
+
+    <!-- Background & Center box -->
+    <div class="background">
+        <div class="center-box">
+            <h1>Welcome to HealthSync</h1>
+            <h4>~~Redefine your lifestyle~~</h4>
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Inside">
+            <br>
+            <button class="get-started" onclick="window.location.href='/login'">Get Started</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome | HealthSync</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            <a href="#">HealthSync</a>
+        </div>
+        <div class="navbar-right">
+            <a href="{{ url_for('how_it_works') }}">How it works</a>
+            <a href="{{ url_for('aboutus') }}">About Us</a>
+            
+        </div>
+    </div>
+
+    <!-- Scrollable Content -->
+    <div class="scrollable-background">
+        <!-- How to Use Section -->
+        <div class="content-section">
+            <h2>How to Use Our BMI Calculator</h2>
+            <ol>
+                <li>Enter your height (in inches or centimeters)</li>
+                <li>Input your weight (in pounds or kilograms)</li>
+                <li>Select your preferred unit system (Imperial or Metric)</li>
+                <li>Click "Calculate BMI" to get your results</li>
+                <li>Review your BMI category and personalized insights</li>
+            </ol>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="content-section">
+            <h2>Benefits of Our BMI Calculator</h2>
+            <ul>
+                <li>Quick and easy assessment of your weight status</li>
+                <li>Personalized BMI category (underweight, normal weight, overweight, obese)</li>
+                <li>Insights into potential health risks associated with your BMI</li>
+                <li>Recommendations for maintaining a healthy BMI</li>
+                <li>Easy tracking of BMI changes over time</li>
+            </ul>
+        </div>
+
+        <!-- FAQs Section -->
+        <div class="content-section">
+            <h2>FAQs: AI-Powered BMI Calculator</h2>
+            <p><strong>Q: How does an AI-powered BMI calculator differ from a regular one?</strong></p>
+            <p>A: An AI-powered BMI calculator not only calculates your BMI but also provides personalized insights and recommendations based on your results, considering factors like age, gender, and activity level.</p>
+            <p><strong>Q: Is BMI always an accurate indicator of health?</strong></p>
+            <p>A: While BMI is a useful starting point, it doesn’t account for factors like muscle mass, bone density, and overall body composition. Our AI-powered calculator provides context and additional insights to give you a more comprehensive understanding of your health.</p>
+        </div>
+
+        <!-- Calculate BMI Button -->
+        <div class="content-section button-section">
+            <button class="get-started" onclick="window.location.href='/bmi'">Calculate BMI Now</button>
+        </div>
+    </div>
+</body>
+</html>

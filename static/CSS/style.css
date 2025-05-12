@@ -1,0 +1,891 @@
+/* Reset and Global Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    min-height: 30px;
+}
+
+.navbar-left img {
+    height: 40px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left a {
+    color: white;
+    text-decoration: none;
+    font-weight: 200;
+    white-space: nowrap;
+    font-size: 20px;
+    padding: 3px 7px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    padding-right: 60px;
+}
+
+.navbar-right a {
+    color: white;
+    text-decoration: none;
+    font-weight: 200;
+    white-space: nowrap;
+    font-size: 20px;
+    padding: 3px 7px;
+}
+
+.navbar-right a:hover {
+    text-decoration: underline;
+}
+
+/* Background Styling for Index */
+.background {
+    background-image: url('../images/BG1.jpg');
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 30px);
+}
+
+/* Center white box for Index */
+.center-box {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 340px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+}
+
+.center-box h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px black;
+    text-decoration: underline;
+}
+
+.center-box h4 {
+    font-style: italic;
+    color: #333;
+    text-shadow: 1px 1px lightgray;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+}
+
+.center-box img {
+    width: 180px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.get-started {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+}
+
+.get-started:hover {
+    background-color: darkgreen;
+}
+
+/* Login and Register Page Styles */
+.login-body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/BG1.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.login-card {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-image {
+    flex: 1;
+    max-width: 45%;
+}
+
+.login-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login-form {
+    flex: 1;
+    padding: 30px;
+    text-align: center;
+}
+
+.login-form h2 {
+    font-size: 28px;
+    color: green;
+    margin-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.divider span {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 0 10px;
+    color: #666;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+}
+
+.options input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.options a {
+    color: green;
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: darkgreen;
+}
+
+.register-text {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+.register-text a {
+    color: green;
+    text-decoration: none;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin: 5px 0 0 0;
+    text-align: left;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column;
+    }
+
+    .login-image {
+        max-width: 100%;
+        height: 200px;
+    }
+
+    .login-form {
+        padding: 20px;
+    }
+
+    .login-form h2 {
+        font-size: 24px;
+    }
+
+    .login-btn {
+        font-size: 14px;
+    }
+}
+
+/* Scrollable Webpage Styles for webpage3.html */
+.scrollable-background {
+    background-color: lightgrey;
+    min-height: 100vh;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    overflow-y: auto;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-section {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/BG1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 90%;
+    margin: 40px auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.content-section h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: green;
+    text-shadow: 3px 3px lightgray;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+}
+
+.content-section ol,
+.content-section ul {
+    padding-left: 20px;
+}
+
+.content-section li {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: black;
+    text-shadow: 2px 1px darkgray;
+}
+
+.content-section p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: black;
+    text-shadow: 2px 1px darkgrey;
+}
+
+.content-section p strong {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    text-shadow: 2px 2px darkgray;
+}
+
+.button-section {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* Ensure content fits laptop screen */
+@media (min-width: 1024px) {
+    .content-section {
+        max-width: 900px;
+    }
+    .scrollable-background {
+        padding-top: 70px;
+    }
+    .navbar-right {
+        gap: 20px;
+    }
+    .navbar-right a {
+        font-size: 16px;
+    }
+}
+
+/* Handle smaller screens */
+@media (max-width: 768px) {
+    .navbar-right {
+        gap: 10px;
+    }
+    .navbar-right a {
+        font-size: 12px;
+    }
+    .center-box {
+        width: 280px;
+    }
+}
+
+/* webpage 4 */
+.bmi-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/BG1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bmi-calculator {
+    background-color: white;
+    max-width: 500px;
+    width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.bmi-calculator h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.bmi-calculator p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-group div {
+    flex: 1;
+    margin-right: 25px;
+}
+
+.input-group div:last-child {
+    margin-right: 10px; /* Corrected from 10 to 10px for consistency */
+}
+
+.input-group label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.input-group input[type="date"] {
+    padding: 10px;
+}
+
+.switch-button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #333;
+}
+
+.switch-button:hover {
+    background-color: #e0e0e0;
+}
+
+.calculate-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.calculate-button:hover {
+    background-color: #0056b3;
+}
+
+/* webpage 5 */
+.results-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/BG1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.results-card {
+    background-color: rgba(255, 255, 255, 0.98);
+    max-width: 450px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.results-card h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: green;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.result-box {
+    margin-bottom: 15px;
+}
+
+.result-item {
+    margin: 10px 0;
+    padding: 8px 12px;
+    background-color: #fafafa;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-item .label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.result-item .value {
+    font-size: 17px;
+    color: #444;
+}
+
+.result-item.diet-recommendation {
+    background-color: #e8f5e9;
+    text-align: left;
+    padding: 12px;
+}
+
+.result-item.diet-recommendation .label {
+    font-size: 15px;
+    color: green;
+}
+
+.result-item.diet-recommendation .value {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.4;
+}
+
+.action-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: darkgreen;
+}
+
+/* Responsive Adjustments for webpage5.html */
+@media (max-width: 768px) {
+    .results-card {
+        padding: 20px;
+    }
+
+    .results-card h2 {
+        font-size: 22px;
+    }
+
+    .result-item .label {
+        font-size: 14px;
+    }
+
+    .result-item .value {
+        font-size: 16px;
+    }
+
+    .result-item.diet-recommendation .value {
+        font-size: 12px;
+    }
+
+    .action-button {
+        font-size: 14px;
+        padding: 8px 18px;
+    }
+}
+
+/* Meal Plan Page Styles for webpage6.html */
+.meal-plan-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/BG1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 80px 20px 40px;
+}
+
+.days-tabs {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 12px 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.day-tab {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 22px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.day-tab:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
+}
+
+.day-tab.active {
+    background-color: darkgreen;
+    font-weight: 600;
+}
+
+.day-section {
+    display: block;
+}
+
+.day-section.hidden {
+    display: none;
+}
+
+.day-section h2 {
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.dish-options {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.dish-selector {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.dish-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.dish-option:hover {
+    background-color: #e8f5e9;
+}
+
+.dish-option input[type="radio"] {
+    margin-right: 8px;
+}
+
+.dish-option input[type="radio"]:checked + span {
+    font-weight: bold;
+    color: green;
+}
+
+.dish-card {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.98);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.dish-card.hidden {
+    display: none;
+}
+
+.dish-image {
+    flex: 1;
+    max-width: 35%;
+}
+
+.dish-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dish-details {
+    flex: 1;
+    padding: 15px;
+}
+
+.dish-details h3 {
+    font-size: 20px;
+    color: green;
+    margin-bottom: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.details-content h4 {
+    font-size: 16px;
+    color: #333;
+    margin: 8px 0 4px;
+}
+
+.details-content pre {
+    white-space: pre-wrap;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.details-content p {
+    font-size: 13px;
+    color: #555;
+    margin: 4px 0;
+}
+
+/* Responsive Adjustments for webpage6.html */
+@media (max-width: 768px) {
+    .days-tabs {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .day-tab {
+        font-size: 14px;
+        padding: 6px 16px;
+    }
+
+    .dish-selector {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dish-option {
+        padding: 6px 12px;
+    }
+
+    .dish-card {
+        flex-direction: column;
+    }
+
+    .dish-image {
+        max-width: 100%;
+        height: 180px;
+    }
+
+    .dish-details {
+        padding: 12px;
+    }
+
+    .dish-details h3 {
+        font-size: 18px;
+    }
+
+    .details-content h4 {
+        font-size: 14px;
+    }
+
+    .details-content pre,
+    .details-content p {
+        font-size: 12px;
+    }
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: white;
+    text-decoration: none;
+    font-weight: 200;
+    white-space: nowrap;
+    font-size: 20px;
+    padding: 3px 7px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    text-decoration: underline;
+}
+
+/* Existing styles remain unchanged */
+
+/* New styles for confirm button and table */
+.confirm-btn {
+    background-color: whitesmoke;
+    color: green;
+    border: 2px thin black;
+    padding: 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.confirm-btn:hover {
+    background-color: #e0e0e0;
+}

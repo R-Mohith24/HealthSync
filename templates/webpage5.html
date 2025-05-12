@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Results | HealthSync</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            <a href="#">HealthSync</a>
+        </div>
+        <div class="navbar-right">
+            <a href="{{ url_for('how_it_works') }}">How it works</a>
+            <a href="{{ url_for('aboutus') }}">About Us</a>
+            
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-container">
+        <div class="results-card">
+            <h2>Your BMI Results</h2>
+            <div class="result-box">
+                <div class="result-item">
+                    <span class="label">BMI</span>
+                    <span class="value">{{ bmi }}</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Category</span>
+                    <span class="value">{{ category }}</span>
+                </div>
+                <div class="result-item diet-recommendation">
+                    <span class="label">Recommendation</span>
+                    <p class="value">{{ diet_recommendation }}</p>
+                </div>
+            </div>
+            <a href="{{ url_for('meal_plan', category=category) }}" class="action-button">Get Detailed Meal Plan</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How It Works | HealthSync</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            <a href="#">HealthSync</a>
+        </div>
+        <div class="navbar-right">
+            <a href="{{ url_for('homepage') }}">Home</a>
+            <a href="#">About Us</a>
+        </div>
+    </div>
+
+    <!-- Scrollable Content -->
+    <div class="scrollable-background">
+        <div class="content-section">
+            <h2>How It Works</h2>
+            <ol>
+                <li>Enter your dietary preferences, calorie goals, and any allergies or intolerances.</li>
+                <li>Our system analyzes your input and generates a custom meal plan.</li>
+                <li>Review your meal plan, which includes detailed recipes and nutritional information.</li>
+                <li>Adjust your meal plan as needed to fit your lifestyle.</li>
+            </ol>
+            <p>HealthSync uses advanced AI to provide personalized nutrition plans tailored to your health goals, ensuring you receive the best possible guidance.</p>
+        </div>
+    </div>
+</body>
+</html>
